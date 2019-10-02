@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="author" content="WB Datadict">
+  <meta name="description" content="mydb Data Dictionary.">
+  <title>mydb Data Dictionary</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script>
+    // Highlight table corresponding to the current fragment in the URL.
+    $(document).ready(function(){
+      $("a").click(function() {
+        var elem = $(this);
+        // Remove all classes from tables.
+        $("table").removeClass( "focused" )
+        // Get a.href value and extract its fragment id.
+        var id = elem.attr("href");
+        // Highlight table using fragment id.
+        $(id).addClass( "focused" );
+      });
+    });
+  </script>
+  <style type="text/css">
+    a {
+        text-decoration: none;
+    }
+    abbr {
+        cursor: help;
+    }
+    header {
+        color: #6A6A6A;
+        text-align: right;
+    }
+    table {
+        border-coLlave primaria pse: coLlave primaria pse;
+        margin-bottom: 30px;
+        width: 100%;
+    }
+    table caption {
+        font-size: 120%;
+        font-weight: bold;
+    }
+    table, td, th {
+        border-color: silver;
+        border-style: solid;
+        border-width: 1px;
+    }
+    caption {
+        color: black;
+    }
+    td, th {
+        padding: 1em;
+    }
+    tr:hover {
+        color: #333;
+        background-color: #F2F2F2;
+    }
+    th {
+        background-color: #F5F5F5;
+    }
+    td {
+        color: #6A6A6A;
+    }
+    ul {
+        font-style: italic;
+    }
+    .centered {
+        text-align: center;
+    }
+    .field {
+        color: #4C4C4C;
+        font-weight: bold;
+    }
+    .focused {
+        outline-color: aqua;
+        outline-style: solid;
+        outline-width: thin;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>DB_RRR SYSTEM<br> Diccionario de datos </h1>
+    <p>
+      <em>2019-09-25</em>
+    </p>
+    <p>
+      <em></em>
+    </p>
+  </header>
+
+  <nav><h2>menu de tablas </h2><ul><li><a href='#clasificacion'>clasificacion</a></li><li><a href='#detalle entrada'>detalle entrada</a></li><li><a href='#detalle movimiento'>detalle movimiento</a></li><li><a href='#entrada'>entrada</a></li><li><a href='#material'>material</a></li><li><a href='#movimiento'>movimiento</a></li><li><a href='#procedencia'>procedencia</a></li><li><a href='#tipodocumento'>tipodocumento</a></li><li><a href='#tipousuario'>tipousuario</a></li><li><a href='#usuario'>usuario</a></li></ul></nav>
+
+  
+  <div><table id='clasificacion'><caption>clasificacion</caption><tr><td colspan='12'></td></tr><tr><th>Nombre</th><th>Tipo de dato</th><th><abbr title='Primary Key'>PK</abbr></th><th><abbr title='Foreign Key'>FK</abbr></th><th><abbr title='Not Null'>NN</abbr></th><th><abbr title='Unique'>UQ</abbr></th><th><abbr title='Binary'>BIN</abbr></th><th><abbr title='Unsigned'>UN</abbr></th><th><abbr title='Zero Fill'>ZF</abbr></th><th><abbr title='Auto Increment'>AI</abbr></th><th>Default</th><th>Comentarios</th></tr><tr><td class='field'>idclasificacion</td><td>INT</td><td class='centered'>&#10004;</td><td class='centered'>&nbsp;</td><td class='centered'>&#10004;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&#10004;</td><td></td><td>Llave primaria </td></tr><tr><td class='field'>color</td><td>VARCHAR(20)</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&#10004;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td></td><td>Nombre del color por el cual se va a clasificar los materiales  </td></tr><tr><td class='field'>descripcioncolor</td><td>VARCHAR(60)</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&#10004;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td></td><td> Se explicara que tipos de materiales serán registrados según el color registrado anteriormente   </td></tr></table>
+    
+    
+    
+  <table id='detalle entrada'><caption>detalle entrada</caption><tr><td colspan='12'></td></tr><tr><th>Nombre</th><th>Tipo de dato</th><th><abbr title='Primary Key'>PK</abbr></th><th><abbr title='Foreign Key'>FK</abbr></th><th><abbr title='Not Null'>NN</abbr></th><th><abbr title='Unique'>UQ</abbr></th><th><abbr title='Binary'>BIN</abbr></th><th><abbr title='Unsigned'>UN</abbr></th><th><abbr title='Zero Fill'>ZF</abbr></th><th><abbr title='Auto Increment'>AI</abbr></th><th>Default</th><th>Comentarios</th></tr><tr><td class='field'>entrada_identrada</td><td>INT</td><td class='centered'>&#10004;</td><td class='centered'><a href='#entradaentrada'>&#10004;</a></td><td class='centered'>&#10004;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td></td><td>Relación identificada entre 
+    entrada y detalle entrada, cumple en papel de ser una llave primaria y segundaria  </td> </td></tr><tr><td class='field'>material_idmaterial</td><td>INT</td><td class='centered'>&#10004;</td><td class='centered'><a href='#materialmaterial'>&#10004;</a></td><td class='centered'>&#10004;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td></td><td>Relación identificada entre material y detalle entrada, cumple en papel de ser una llave primaria y segundaria   </td></tr><tr><td class='field'>cantidadentrada</td><td>INT</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td></td><td>Cantidad de material que será entrado al sistema  </td></tr><tr><td class='field'>pesoentrada</td><td>DOUBLE</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td></td><td>Peso del material que será entrado al sistema </td></tr></table>
+  
+  
+  <table id='detalle movimiento'><caption>detalle movimiento</caption><tr><td colspan='12'></td></tr><tr><th>Nombre</th><th>Tipo de dato</th><th><abbr title='Primary Key'>PK</abbr></th><th><abbr title='Foreign Key'>FK</abbr></th><th><abbr title='Not Null'>NN</abbr></th><th><abbr title='Unique'>UQ</abbr></th><th><abbr title='Binary'>BIN</abbr></th><th><abbr title='Unsigned'>UN</abbr></th><th><abbr title='Zero Fill'>ZF</abbr></th><th><abbr title='Auto Increment'>AI</abbr></th><th>Default</th><th>Comentarios</th></tr><tr><td class='field'>movimiento_idmovimiento</td><td>INT</td><td class='centered'>&#10004;</td><td class='centered'><a href='#movimientomovimiento'>&#10004;</a></td><td class='centered'>&#10004;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td></td><td> Relación identificada entre movimiento y detalle movimiento, cumple en papel de ser una llave primaria y segundaria   </td></tr><tr><td class='field'>material_idmaterial</td><td>INT</td><td class='centered'>&#10004;</td><td class='centered'><a href='#materialmaterial'>&#10004;</a></td><td class='centered'>&#10004;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td></td><td> Relación identificada entre material y detalle movimiento, cumple en papel de ser una llave primaria y segundaria  </td></tr><tr><td class='field'>cantidadmovimiento</td><td>INT</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td></td><td> Cantidad de material que será movido del almacén</td></tr><tr><td class='field'>pesomovimiento</td><td>DOUBLE</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td></td><td> Peso del material que será movido del almacén</td></tr></table>
+  
+  
+  <table id='entrada'><caption>entrada</caption><tr><td colspan='12'></td></tr><tr><th>Nombre</th><th>Tipo de dato</th><th><abbr title='Primary Key'>PK</abbr></th><th><abbr title='Foreign Key'>FK</abbr></th><th><abbr title='Not Null'>NN</abbr></th><th><abbr title='Unique'>UQ</abbr></th><th><abbr title='Binary'>BIN</abbr></th><th><abbr title='Unsigned'>UN</abbr></th><th><abbr title='Zero Fill'>ZF</abbr></th><th><abbr title='Auto Increment'>AI</abbr></th><th>Default</th><th>Comentarios</th></tr><tr><td class='field'>identrada</td><td>INT</td><td class='centered'>&#10004;</td><td class='centered'>&nbsp;</td><td class='centered'>&#10004;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&#10004;</td><td></td><td>Llave primaria </td></tr><tr><td class='field'>fechaentrega</td><td>DATE</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&#10004;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td></td><td>Fecha en la cual se realizo la entrada al sistema </td></tr><tr><td class='field'>procedencia</td><td>INT</td><td class='centered'>&nbsp;</td><td class='centered'><a href='#procedencia'>&#10004;</a></td><td class='centered'>&#10004;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td></td><td>Relación entre entrada y procedencia, cumple en papel de ser una llave segundaria    </td></tr><tr><td class='field'>usuario_tipodocumento_idtipodocumento</td><td>INT</td><td class='centered'>&nbsp;</td><td class='centered'><a href='#usuario_tipodocumentotipodocumento'>&#10004;</a></td><td class='centered'>&#10004;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td></td><td>Relación identificada entre entrada y usuario. Tipo documento, cumple en papel de ser una llave segundaria    </td></tr><tr><td class='field'>usuario_numdocumento</td><td>VARCHAR(20)</td><td class='centered'>&nbsp;</td><td class='centered'><a href='#usuario_numdocumento'>&#10004;</a></td><td class='centered'>&#10004;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td></td><td>Relación entre entrada y usuario, cumple en papel de ser una llave segundaria  </td></tr></table>
+  
+  
+  <table id='material'><caption>material</caption><tr><td colspan='12'></td></tr><tr><th>Nombre</th><th>Tipo de dato</th><th><abbr title='Primary Key'>PK</abbr></th><th><abbr title='Foreign Key'>FK</abbr></th><th><abbr title='Not Null'>NN</abbr></th><th><abbr title='Unique'>UQ</abbr></th><th><abbr title='Binary'>BIN</abbr></th><th><abbr title='Unsigned'>UN</abbr></th><th><abbr title='Zero Fill'>ZF</abbr></th><th><abbr title='Auto Increment'>AI</abbr></th><th>Default</th><th>Comentarios</th></tr><tr><td class='field'>idmaterial</td><td>INT</td><td class='centered'>&#10004;</td><td class='centered'>&nbsp;</td><td class='centered'>&#10004;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&#10004;</td><td></td><td>Llave primaria </td></tr><tr><td class='field'>nombrematerial</td><td>VARCHAR(60)</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&#10004;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td></td><td>Nombre del material que se entrara al sistema   </td></tr><tr><td class='field'>clasificacion_idclasificacion</td><td>INT</td><td class='centered'>&nbsp;</td><td class='centered'><a href='#clasificacionclasificacion'>&#10004;</a></td><td class='centered'>&#10004;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td></td><td>Relación entre material y clasificación, cumple en papel de ser una llave segundaria   </td></tr></table>
+  
+  
+  <table id='movimiento'><caption>movimiento</caption><tr><td colspan='12'></td></tr><tr><th>Nombre</th><th>Tipo de dato</th><th><abbr title='Primary Key'>PK</abbr></th><th><abbr title='Foreign Key'>FK</abbr></th><th><abbr title='Not Null'>NN</abbr></th><th><abbr title='Unique'>UQ</abbr></th><th><abbr title='Binary'>BIN</abbr></th><th><abbr title='Unsigned'>UN</abbr></th><th><abbr title='Zero Fill'>ZF</abbr></th><th><abbr title='Auto Increment'>AI</abbr></th><th>Default</th><th>Comentarios</th></tr><tr><td class='field'>idmovimiento</td><td>INT</td><td class='centered'>&#10004;</td><td class='centered'>&nbsp;</td><td class='centered'>&#10004;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&#10004;</td><td></td><td>Llave primaria </td></tr><tr><td class='field'>fechamovimiento</td><td>DATE</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&#10004;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td></td><td>
+      Fecha en la cual se realizó el movimiento al sistema 
+       </td></tr><tr><td class='field'>destino</td><td>ENUM('Venta', 'Huerta')</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&#10004;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td></td><td>Lugar adonde va dirigido el material, se puede elegir entre venta o huerta.    </td></tr><tr><td class='field'>totalmovimiento</td><td>DOUBLE</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td></td><td> Cantidad de dinero obtenida por la venta del material, solo si el destino es la venta  </td></tr></table>
+  
+  
+  <table id='procedencia'><caption>procedencia</caption><tr><td colspan='12'></td></tr><tr><th>Nombre</th><th>Tipo de dato</th><th><abbr title='Primary Key'>PK</abbr></th><th><abbr title='Foreign Key'>FK</abbr></th><th><abbr title='Not Null'>NN</abbr></th><th><abbr title='Unique'>UQ</abbr></th><th><abbr title='Binary'>BIN</abbr></th><th><abbr title='Unsigned'>UN</abbr></th><th><abbr title='Zero Fill'>ZF</abbr></th><th><abbr title='Auto Increment'>AI</abbr></th><th>Default</th><th>Comentarios</th></tr><tr><td class='field'>idprocedencia</td><td>INT</td><td class='centered'>&#10004;</td><td class='centered'>&nbsp;</td><td class='centered'>&#10004;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&#10004;</td><td></td><td>Llave primaria </td></tr><tr><td class='field'>nombreprocedencia</td><td>VARCHAR(30)</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&#10004;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td></td><td>Nombre del lugar donde viene en material  </td></tr></table>
+  
+  <table id='tipodocumento'><caption>tipodocumento</caption><tr><td colspan='12'></td></tr><tr><th>Nombre</th><th>Tipo de dato</th><th><abbr title='Primary Key'>PK</abbr></th><th><abbr title='Foreign Key'>FK</abbr></th><th><abbr title='Not Null'>NN</abbr></th><th><abbr title='Unique'>UQ</abbr></th><th><abbr title='Binary'>BIN</abbr></th><th><abbr title='Unsigned'>UN</abbr></th><th><abbr title='Zero Fill'>ZF</abbr></th><th><abbr title='Auto Increment'>AI</abbr></th><th>Default</th><th>Comentarios</th></tr><tr><td class='field'>idtipodocumento</td><td>INT</td><td class='centered'>&#10004;</td><td class='centered'>&nbsp;</td><td class='centered'>&#10004;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&#10004;</td><td></td><td>Llave primaria </td></tr><tr><td class='field'>nombredocumento</td><td>VARCHAR(25)</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&#10004;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td></td><td>Nombre del tipo de documento  </td></tr></table>
+  
+  
+  <table id='tipousuario'><caption>tipousuario</caption><tr><td colspan='12'></td></tr><tr><th>Nombre</th><th>Tipo de dato</th><th><abbr title='Primary Key'>PK</abbr></th><th><abbr title='Foreign Key'>FK</abbr></th><th><abbr title='Not Null'>NN</abbr></th><th><abbr title='Unique'>UQ</abbr></th><th><abbr title='Binary'>BIN</abbr></th><th><abbr title='Unsigned'>UN</abbr></th><th><abbr title='Zero Fill'>ZF</abbr></th><th><abbr title='Auto Increment'>AI</abbr></th><th>Default</th><th>Comentarios</th></tr><tr><td class='field'>idtipousuario</td><td>INT</td><td class='centered'>&#10004;</td><td class='centered'>&nbsp;</td><td class='centered'>&#10004;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&#10004;</td><td></td><td>Llave primaria </td></tr><tr><td class='field'>Nombretipousuario</td><td>VARCHAR(25)</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&#10004;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td></td><td>Nombre para el nuevo tipo de usuario  </td></tr><tr><td class='field'>descripcionusuario</td><td>VARCHAR(50)</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&#10004;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td></td><td> Se describirá en nivel de permisos que tendrá el tipo de usuario  </td></tr></table>
+  
+
+  <table id='usuario'><caption>usuario</caption><tr><td colspan='12'></td></tr><tr><th>Nombre</th><th>Tipo de dato</th><th><abbr title='Primary Key'>PK</abbr></th><th><abbr title='Foreign Key'>FK</abbr></th><th><abbr title='Not Null'>NN</abbr></th><th><abbr title='Unique'>UQ</abbr></th><th><abbr title='Binary'>BIN</abbr></th><th><abbr title='Unsigned'>UN</abbr></th><th><abbr title='Zero Fill'>ZF</abbr></th><th><abbr title='Auto Increment'>AI</abbr></th><th>Default</th><th>Comentarios</th></tr><tr><td class='field'>tipodocumento_idtipodocumento</td><td>INT</td><td class='centered'>&#10004;</td><td class='centered'><a href='#tipodocumentotipodocumento'>&#10004;</a></td><td class='centered'>&#10004;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td></td><td> Relación identificada entre usuario y tipo documento , cumple en papel de ser una llave primaria y segundaria</td></tr><tr><td class='field'>numdocumento</td><td>VARCHAR(20)</td><td class='centered'>&#10004;</td><td class='centered'>&nbsp;</td><td class='centered'>&#10004;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td></td><td>Llave primaria </td></tr><tr><td class='field'>primernombre</td><td>VARCHAR(20)</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&#10004;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td></td><td>Primer nombre del usuario </td></tr><tr><td class='field'>segundonombre</td><td>VARCHAR(20)</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td></td><td>segundo nombre del usuario </td></tr><tr><td class='field'>primerapellido</td><td>VARCHAR(20)</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&#10004;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td></td><td>primer apellido del usuario</td></tr><tr><td class='field'>segundoapellido</td><td>VARCHAR(20)</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td></td><td>segundo apellido del usuario </td></tr><tr><td class='field'>contraseña</td><td>VARCHAR(12)</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&#10004;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td></td><td>este campo se encontrará encriptado </td></tr><tr><td class='field'>Email</td><td>VARCHAR(40)</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&#10004;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td></td><td>correo electronico del usuario  </td></tr><tr><td class='field'>estadousuario</td><td>ENUM('Activo', 'En Espera', 'Rechazado')</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&#10004;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td></td><td>En este campo se tendrá que elegir el estado del usuario entre las opciones mencionadas    </td></tr><tr><td class='field'>FechaRegistro</td><td>DATE</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&#10004;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td></td><td> Fecha de la creación del un nuevo usuario </td></tr><tr><td class='field'>tipousuario_idtipousuario</td><td>INT</td><td class='centered'>&nbsp;</td><td class='centered'><a href='#tipousuariotipousuario'>&#10004;</a></td><td class='centered'>&#10004;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td class='centered'>&nbsp;</td><td></td><td> Relación entre usuario y tipo de usuario, cumple en papel de ser una llave segundaria</td></tr></table></div>
+</body>
+</html>
